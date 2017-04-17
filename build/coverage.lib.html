@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-gulp-connect-php/gulp-connect-php/index.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-gulp-connect-php/node_modules/gulp-connect-php/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-gulp-connect-php">npmtest-gulp-connect-php (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-gulp-connect-php/gulp-connect-php/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-gulp-connect-php/node_modules/gulp-connect-php/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">23.73% <small>(14 / 59)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-gulp-connect-php/gulp-connect-php/</a> » index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-gulp-connect-php/node_modules/gulp-connect-php/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -481,66 +483,66 @@ module.exports = (function () {
 	var checkServerTries = 0;
 	var workingPort = 8000;
 &nbsp;
-<span class="fstat-no" title="function not covered">	function checkServer(hostname, port, cb) {</span>
-<span class="cstat-no" title="statement not covered">		setTimeout(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">			http.request({</span>
+<span class="fstat-no" title="function not covered" >	function checkServer(hostname, port, cb) {</span>
+<span class="cstat-no" title="statement not covered" >		setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >			http.request({</span>
 				method: 'HEAD',
 				hostname: hostname,
 				port: port
-			}, <span class="fstat-no" title="function not covered">function (res) {</span>
-<span class="cstat-no" title="statement not covered">				var statusCodeType = Number(res.statusCode.toString()[0]);</span>
+			}, <span class="fstat-no" title="function not covered" >function (res) {</span>
+<span class="cstat-no" title="statement not covered" >				var statusCodeType = Number(res.statusCode.toString()[0]);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">				if ([2, 3, 4].indexOf(statusCodeType) !== -1) {</span>
-<span class="cstat-no" title="statement not covered">					return cb();</span>
-				} else <span class="cstat-no" title="statement not covered">if (statusCodeType === 5) {</span>
-<span class="cstat-no" title="statement not covered">					console.log(</span>
+<span class="cstat-no" title="statement not covered" >				if ([2, 3, 4].indexOf(statusCodeType) !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >					return cb();</span>
+				} else <span class="cstat-no" title="statement not covered" >if (statusCodeType === 5) {</span>
+<span class="cstat-no" title="statement not covered" >					console.log(</span>
 						'Server docroot returned 500-level response. Please check ' +
 						'your configuration for possible errors.'
 					);
-<span class="cstat-no" title="statement not covered">					return cb();</span>
+<span class="cstat-no" title="statement not covered" >					return cb();</span>
 				}
 &nbsp;
-<span class="cstat-no" title="statement not covered">				checkServer(hostname, port, cb);</span>
-			}).on('error', <span class="fstat-no" title="function not covered">function (err) {</span>
+<span class="cstat-no" title="statement not covered" >				checkServer(hostname, port, cb);</span>
+			}).on('error', <span class="fstat-no" title="function not covered" >function (err) {</span>
 				// back off after 1s
-<span class="cstat-no" title="statement not covered">				if (++checkServerTries &gt; 20) {</span>
-<span class="cstat-no" title="statement not covered">					console.log('PHP server not started. Retrying...');</span>
-<span class="cstat-no" title="statement not covered">					return cb();</span>
+<span class="cstat-no" title="statement not covered" >				if (++checkServerTries &gt; 20) {</span>
+<span class="cstat-no" title="statement not covered" >					console.log('PHP server not started. Retrying...');</span>
+<span class="cstat-no" title="statement not covered" >					return cb();</span>
 				}
-<span class="cstat-no" title="statement not covered">				checkServer(hostname, port, cb);</span>
+<span class="cstat-no" title="statement not covered" >				checkServer(hostname, port, cb);</span>
 			}).end();
 		}, 50);
 	}
 &nbsp;
-	var closeServer = <span class="fstat-no" title="function not covered">function (cb) {</span>
-<span class="cstat-no" title="statement not covered">		var child = exec('lsof -i :' + workingPort,</span>
-<span class="fstat-no" title="function not covered">		  function (error, stdout, stderr) {</span>
+	var closeServer = <span class="fstat-no" title="function not covered" >function (cb) {</span>
+<span class="cstat-no" title="statement not covered" >		var child = exec('lsof -i :' + workingPort,</span>
+<span class="fstat-no" title="function not covered" >		  function (error, stdout, stderr) {</span>
 		    //console.log('stdout: ' + stdout);
 		    //console.log('stderr: ' + stderr);
-<span class="cstat-no" title="statement not covered">		    if (error !== null) {</span>
-<span class="cstat-no" title="statement not covered">		      console.log('exec error: ' + error);</span>
+<span class="cstat-no" title="statement not covered" >		    if (error !== null) {</span>
+<span class="cstat-no" title="statement not covered" >		      console.log('exec error: ' + error);</span>
 		    }
 &nbsp;
 		    // get pid then kill it
-<span class="cstat-no" title="statement not covered">		    var pid = stdout.match(/php\s+?([0-9]+)/)[1];</span>
-<span class="cstat-no" title="statement not covered">		    if (pid) {</span>
-<span class="cstat-no" title="statement not covered">		    	exec('kill ' + pid, <span class="fstat-no" title="function not covered">function (error, stdout, stderr) {</span></span>
+<span class="cstat-no" title="statement not covered" >		    var pid = stdout.match(/php\s+?([0-9]+)/)[1];</span>
+<span class="cstat-no" title="statement not covered" >		    if (pid) {</span>
+<span class="cstat-no" title="statement not covered" >		    	exec('kill ' + pid, <span class="fstat-no" title="function not covered" >function (error, stdout, stderr) {</span></span>
 		    		//console.log('stdout: ' + stdout);
 		   			//console.log('stderr: ' + stderr);
-<span class="cstat-no" title="statement not covered">		    		cb();</span>
+<span class="cstat-no" title="statement not covered" >		    		cb();</span>
 		    	});
 		    } else {
-<span class="cstat-no" title="statement not covered">		    	cb({error: "couldn't find process id and kill it"});</span>
+<span class="cstat-no" title="statement not covered" >		    	cb({error: "couldn't find process id and kill it"});</span>
 		    }
 		});
 	};
 &nbsp;
-	var server = <span class="fstat-no" title="function not covered">function (options, cb){</span>
-<span class="cstat-no" title="statement not covered">		if (!cb) {</span>
-<span class="cstat-no" title="statement not covered">			cb = <span class="fstat-no" title="function not covered">function(){</span>};</span>
+	var server = <span class="fstat-no" title="function not covered" >function (options, cb){</span>
+<span class="cstat-no" title="statement not covered" >		if (!cb) {</span>
+<span class="cstat-no" title="statement not covered" >			cb = <span class="fstat-no" title="function not covered" >function(){</span>};</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		options = extend({</span>
+<span class="cstat-no" title="statement not covered" >		options = extend({</span>
 			port: 8000,
 			hostname: '127.0.0.1',
 			base: '.',
@@ -550,43 +552,43 @@ module.exports = (function () {
 			stdio: 'inherit'
 		}, options);
 &nbsp;
-<span class="cstat-no" title="statement not covered">		workingPort = options.port;</span>
-<span class="cstat-no" title="statement not covered">		var host = options.hostname + ':' + options.port;</span>
-<span class="cstat-no" title="statement not covered">		var args = ['-S', host, '-t', options.base];</span>
+<span class="cstat-no" title="statement not covered" >		workingPort = options.port;</span>
+<span class="cstat-no" title="statement not covered" >		var host = options.hostname + ':' + options.port;</span>
+<span class="cstat-no" title="statement not covered" >		var args = ['-S', host, '-t', options.base];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (options.ini) {</span>
-<span class="cstat-no" title="statement not covered">			args.push('-c', options.ini);</span>
+<span class="cstat-no" title="statement not covered" >		if (options.ini) {</span>
+<span class="cstat-no" title="statement not covered" >			args.push('-c', options.ini);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (options.router) {</span>
-<span class="cstat-no" title="statement not covered">			args.push(require('path').resolve(options.router));</span>
+<span class="cstat-no" title="statement not covered" >		if (options.router) {</span>
+<span class="cstat-no" title="statement not covered" >			args.push(require('path').resolve(options.router));</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		binVersionCheck(options.bin, '&gt;=5.4', <span class="fstat-no" title="function not covered">function (err) {</span></span>
-<span class="cstat-no" title="statement not covered">			if (err) {</span>
-<span class="cstat-no" title="statement not covered">				cb();</span>
-<span class="cstat-no" title="statement not covered">				return;</span>
+<span class="cstat-no" title="statement not covered" >		binVersionCheck(options.bin, '&gt;=5.4', <span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >			if (err) {</span>
+<span class="cstat-no" title="statement not covered" >				cb();</span>
+<span class="cstat-no" title="statement not covered" >				return;</span>
 			}
-<span class="cstat-no" title="statement not covered">			var checkPath = <span class="fstat-no" title="function not covered">function(){</span></span>
-<span class="cstat-no" title="statement not covered">			    var exists = fs.existsSync(options.base);</span>
-<span class="cstat-no" title="statement not covered">			    if (exists === true) {</span>
-<span class="cstat-no" title="statement not covered">			        spawn(options.bin, args, {</span>
+<span class="cstat-no" title="statement not covered" >			var checkPath = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >			    var exists = fs.existsSync(options.base);</span>
+<span class="cstat-no" title="statement not covered" >			    if (exists === true) {</span>
+<span class="cstat-no" title="statement not covered" >			        spawn(options.bin, args, {</span>
 						cwd: '.',
 						stdio: options.stdio
 					});
 			    }
 			    else{
-<span class="cstat-no" title="statement not covered">				setTimeout(checkPath, 100);</span>
+<span class="cstat-no" title="statement not covered" >				setTimeout(checkPath, 100);</span>
 			    }
 			};
-<span class="cstat-no" title="statement not covered">			checkPath();</span>
+<span class="cstat-no" title="statement not covered" >			checkPath();</span>
 			// check when the server is ready. tried doing it by listening
 			// to the child process `data` event, but it's not triggered...
-<span class="cstat-no" title="statement not covered">			checkServer(options.hostname, options.port, <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">				if (options.open) {</span>
-<span class="cstat-no" title="statement not covered">					open('http://' + host + options.root);</span>
+<span class="cstat-no" title="statement not covered" >			checkServer(options.hostname, options.port, <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >				if (options.open) {</span>
+<span class="cstat-no" title="statement not covered" >					open('http://' + host + options.root);</span>
 				}
-<span class="cstat-no" title="statement not covered">				cb();</span>
+<span class="cstat-no" title="statement not covered" >				cb();</span>
 			}.bind(this));
 		}.bind(this));
 	};
@@ -597,11 +599,10 @@ module.exports = (function () {
 })();
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 22:18:55 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 15:50:19 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
